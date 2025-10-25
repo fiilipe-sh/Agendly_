@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'uri'
 
+set :bind, '0.0.0.0'          # Aceita conexões externas
+set :port, ENV['PORT'] || 4567
+
 # Número do WhatsApp fixo
 WHATSAPP_NUMBER = "5581989490518"
 
