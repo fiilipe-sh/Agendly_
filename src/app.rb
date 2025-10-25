@@ -1,8 +1,16 @@
 require 'sinatra'
 require 'uri'
 
+
+
 set :bind, '0.0.0.0'          # Aceita conexões externas
 set :port, ENV['PORT'] || 4567
+
+
+set :public_folder, File.join(File.dirname(__FILE__), 'public')
+set :views, File.join(__dir__, 'views')
+set :public_folder, File.expand_path('../public', __dir__)
+
 
 # Número do WhatsApp fixo
 WHATSAPP_NUMBER = "5581989490518"
